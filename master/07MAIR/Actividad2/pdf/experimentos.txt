@@ -1,0 +1,177 @@
+Entrenando ...
+Entrenando batch: 1
+experimento: Experimento_Dropout
+arquitectura: 6
+train_steps: 450000
+policy_nb_steps: 100000
+agent_nb_steps_warmup: 3000
+agent_target_model_update: 10000
+agent_batch_size: 32
+agent_train_interval: 4
+learning_rate: 0.0001
+memory_limit: 10000
+optimizer_type: Adam
+history_reward: []
+history_steps: []
+
+
+Testing for 10 episodes ...
+Episode 1: reward: -20.000, steps: 1217
+Episode 2: reward: -15.000, steps: 2040
+Episode 3: reward: -18.000, steps: 2101
+Episode 4: reward: -19.000, steps: 1829
+Episode 5: reward: -20.000, steps: 1432
+Episode 6: reward: -18.000, steps: 1427
+Episode 7: reward: -17.000, steps: 1498
+Episode 8: reward: -18.000, steps: 1771
+Episode 9: reward: -20.000, steps: 1790
+Episode 10: reward: -18.000, steps: 1558
+mean reward: -18.3
+mean_steps: 1666.3
+
+
+==================================================================================================================
+
+red neuronal
+Testing for 10 episodes ...
+Episode 1: reward: -21.000, steps: 811
+Episode 2: reward: -21.000, steps: 811
+Episode 3: reward: -21.000, steps: 783
+Episode 4: reward: -20.000, steps: 842
+Episode 5: reward: -21.000, steps: 783
+Episode 6: reward: -21.000, steps: 811
+Episode 7: reward: -21.000, steps: 852
+Episode 8: reward: -20.000, steps: 842
+Episode 9: reward: -20.000, steps: 842
+Episode 10: reward: -21.000, steps: 783
+mean reward: -20.7
+mean_steps: 816
+
+lr=0.00001
+Testing for 10 episodes ...
+Episode 1: reward: -21.000, steps: 826
+Episode 2: reward: -21.000, steps: 852
+Episode 3: reward: -21.000, steps: 824
+Episode 4: reward: -21.000, steps: 824
+Episode 5: reward: -21.000, steps: 764
+Episode 6: reward: -21.000, steps: 764
+Episode 7: reward: -21.000, steps: 764
+Episode 8: reward: -21.000, steps: 764
+Episode 9: reward: -21.000, steps: 764
+Episode 10: reward: -21.000, steps: 825
+mean reward: -21.0
+mean_steps: 797.1
+
+==================================================================================================================
+network1
+para 4 actions
+train_steps = 500000
+policy_nb_steps = 100000    # este -> 100000
+agent_nb_steps_warmup = 10000 #50000  este -> 10000
+agent_target_model_update = 10000
+agent_batch_size = 32    # 32 64 128 256 512
+agent_train_interval = 4  # 4, 20
+learning_rate = .0001    # .00025 .00010 .00040 .001
+arquitectura = 1
+memory_limit = 10000 # 10000
+               enable_dueling_network=True,
+               dueling_type = "avg")
+Testing for 10 episodes ...
+Episode 1: reward: -13.000, steps: 3497
+Episode 2: reward: -12.000, steps: 3046
+Episode 3: reward: -8.000, steps: 4034
+Episode 4: reward: -19.000, steps: 2621
+Episode 5: reward: -15.000, steps: 3005
+Episode 6: reward: -15.000, steps: 3172
+Episode 7: reward: -12.000, steps: 3208
+Episode 8: reward: -16.000, steps: 2978
+Episode 9: reward: -18.000, steps: 2729
+Episode 10: reward: -16.000, steps: 3236
+mean reward: -14.4
+mean_steps: 3152.6
+
+==================================================================================================================
+6actions
+memory = SequentialMemory(limit=20000, window_length=WINDOW_LENGTH)
+nb_steps_warmup=10000, gamma=.99, target_model_update=10000,
+               train_interval=4, batch_size=32
+EpsGreedyQPolicy(), attr='eps', value_max=1., 
+                                  value_min=.1, value_test=0.02, nb_steps=100000
+
+Testing for 10 episodes ...
+Episode 1: reward: -19.000, steps: 1411
+Episode 2: reward: -17.000, steps: 1567
+Episode 3: reward: -14.000, steps: 1925
+Episode 4: reward: -19.000, steps: 1403
+Episode 5: reward: -14.000, steps: 1751
+Episode 6: reward: -10.000, steps: 2003
+Episode 7: reward: -17.000, steps: 1373
+Episode 8: reward: -15.000, steps: 1727
+Episode 9: reward: -14.000, steps: 2070
+Episode 10: reward: -15.000, steps: 1809
+mean reward: -15.4
+mean_steps: 1703.9
+
+==================================================================================================================
+4 actions, model 1, sin (enable_dueling_network=True), 354 epocas
+Testing for 10 episodes ...
+Episode 1: reward: -15.000, steps: 2768
+Episode 2: reward: -15.000, steps: 2880
+Episode 3: reward: -18.000, steps: 2881
+Episode 4: reward: -11.000, steps: 3076
+Episode 5: reward: -18.000, steps: 3022
+Episode 6: reward: -13.000, steps: 3183
+Episode 7: reward: -15.000, steps: 2805
+Episode 8: reward: -9.000, steps: 3355
+Episode 9: reward: -20.000, steps: 2668
+Episode 10: reward: -14.000, steps: 3096
+mean reward: -14.8
+mean_steps: 2973.4
+
+==================================================================================================================
+6 actions
+policy = LinearAnnealedPolicy(EpsGreedyQPolicy(), attr='eps', value_max=1., 
+                              value_min=0.02, value_test=0.02, nb_steps=policy_nb_steps)
+
+episode: 381
+Testing for 10 episodes ...
+Episode 1: reward: -17.000, steps: 2061
+Episode 2: reward: -13.000, steps: 2695
+Episode 3: reward: -17.000, steps: 2143
+Episode 4: reward: -20.000, steps: 2117
+Episode 5: reward: -18.000, steps: 2320
+Episode 6: reward: -19.000, steps: 2157
+Episode 7: reward: -19.000, steps: 2042
+Episode 8: reward: -19.000, steps: 2213
+Episode 9: reward: -17.000, steps: 2509
+Episode 10: reward: -17.000, steps: 2246
+mean reward: -17.6
+mean_steps: 2250.3
+
+(-17.6, 2250.3)
+==================================================================================================================
+arquitectura: 2
+episode: 435
+    memory = SequentialMemory(limit=20000, window_length=WINDOW_LENGTH)   # TO-DO
+    processor = PongProcessor()
+    policy = LinearAnnealedPolicy(EpsGreedyQPolicy(), attr='eps', value_max=1., 
+                                  value_min=.1, value_test=0.02, nb_steps=100000)   
+    dqn = DQNAgent(model=model, nb_actions=nb_actions, policy=policy, memory=memory,
+               processor=processor, nb_steps_warmup=10000, gamma=.99, target_model_update=10000,
+               train_interval=4, batch_size=32)
+Testing for 10 episodes ...
+Episode 1: reward: -18.000, steps: 1369
+Episode 2: reward: -20.000, steps: 965
+Episode 3: reward: -16.000, steps: 1826
+Episode 4: reward: -20.000, steps: 1162
+Episode 5: reward: -16.000, steps: 1704
+Episode 6: reward: -20.000, steps: 950
+Episode 7: reward: -19.000, steps: 1116
+Episode 8: reward: -18.000, steps: 1182
+Episode 9: reward: -16.000, steps: 1698
+Episode 10: reward: -14.000, steps: 1956
+mean reward: -17.7
+mean_steps: 1392.8
+==================================================================================================================
+"arquitectura":9, local
+
