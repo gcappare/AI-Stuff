@@ -1,0 +1,2 @@
+# Imágenes para la actividad
+
